@@ -11,13 +11,12 @@
     <title>Olá, mundo!</title>
   </head>
   <body>
-    <h1>Aula 02</h1>
+    <h2>Aula 02</h2>
 
     <?php
-
     	require_once 'caneta.class.php';
     	require_once 'pessoa.class.php';
-
+        /**
     	$c1 = new Caneta;
     	$c1->cor = "Azul";
     	$c1->ponta = 0.5;
@@ -25,24 +24,35 @@
     	$c1->destampar();
     	print_r($c1);
     	//$c1->rabiscar();
-
     	echo '</br>';
-
     	$c2 = new Caneta;
     	$c2->cor = "Verde";
     	$c2->carga = 50;
     	$c2->tampar();
     	print_r($c2);
-
     	echo '</br>';
-
     	$p1 = new Pessoa;
     	$p1->nome = "Paulo";
     	$p1->idade = 33;
     	$p1->voz = false;
     	$p1->falar();
+        **/
+    ?>
+    
+    <h2>Aula 03</h2>
+    <pre>
+    <?php
+
+        $c1 = new Caneta;
+        $c1->modelo = "Azul Cristal";
+        $c1->cor = "Azul";
+        //$c1->ponta = 0.5;
+        $c1->tampar();
+        print_r($c1);
 
     ?>
+    </pre>
+
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
@@ -51,3 +61,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
+
