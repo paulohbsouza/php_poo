@@ -11,7 +11,7 @@
     <title>Olá, mundo!</title>
   </head>
   <body>
-    <h2>Aula 02</h2>
+    <h4>Aula 02</h4>
 
     <?php
     	require_once 'caneta.class.php';
@@ -39,17 +39,43 @@
         **/
     ?>
     
-    <h2>Aula 03</h2>
+    <h4>Aula 03</h4>
+    <!--
     <pre>
     <?php
-
+    /**
         $c1 = new Caneta;
         $c1->modelo = "Azul Cristal";
         $c1->cor = "Azul";
         //$c1->ponta = 0.5;
         $c1->tampar();
         print_r($c1);
-
+    **/
+    ?>
+    </pre>
+	-->
+    <h4>Aula 04</h4>
+    <!--
+    <pre>
+    <?php
+    /**
+        $c1 = new Caneta("BBIC", "AZUR", 0.5);
+        //$c1->setModelo("BIC");
+        //$c1->modelo = "BBIICC";
+        //$c1->setPonta(0.5);
+        //$c1->ponta = 0.5; #FATAL ERROR
+        //print "Eu tenho uma caneta {$c1->getModelo()} de ponta {$c1->getPonta()}.";
+        print_r($c1);
+        $c2 = new Caneta("kkk", "Verde", 1.5);
+        print_r($c2); 
+    **/    
+    ?>
+    </pre>
+    -->
+    <h4>Aula 05</h4>
+    <pre>
+    <?php
+    	#...
     ?>
     </pre>
 
