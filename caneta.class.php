@@ -62,8 +62,8 @@
 
 	/** **/
 	#Aula 5
-	class Caneta{
-
-	}
+	//class Caneta{
+	//	The-Banks
+	//}
 
 ?>
