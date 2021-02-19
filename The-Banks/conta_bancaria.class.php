@@ -14,7 +14,6 @@
  		public function abrirConta($t){
  			setTipo($t);
  			setStatus(true);
-
  			if ($t == "CC") {
  				setSaldo(50);
  			} elseif ($t == "CP") {
@@ -22,24 +21,51 @@
  			}
  		}
  		public function fecharConta(){
- 			if ($s > 0) {
+ 			if ($sd > 0) {
  				echo "Conta com dinheiro, não pode ser fechada.";
- 			} elseif ($s < 0) {
+ 			} elseif ($sd < 0) {
  				echo "Conta em débito";
  			}
  			setSatatus(false);
  		}
- 		public function depositar(){
-
+ 		public function depositar($vl){
+ 			if ($st = true) {
+ 				setSaldo(getSaldo() + $vl);
+ 			} else {
+ 				echo "Impossível fazer depósito";
+ 			}
  		}
- 		public function sacar(){
-
+ 		public function sacar($vl){
+ 			if ($st = true) {
+ 				if ($sd > 0) {
+ 					setSaldo(getSaldo() - $vl);
+ 				} else {
+ 					echo "Saldo insuficiente.";
+ 				}
+ 			} else {
+ 				echo "Impossível sacar.";
+ 			}
  		}
  		public function pagarMensal(){
-
+ 			$v_m = 0;
+ 			if ($t == "CC") {
+ 				$v_m = 12;
+ 			} elseif ($t == "CP") {
+ 				$v_m = 20;
+ 			}
+ 			if ($st = true) {
+ 				if ($sd > $v_m) {
+ 					setSaldo(getSaldo() - $v_m);
+ 				} else {
+ 					"Saldo insuficiente.";
+ 				}
+ 			} else {
+ 				echo "Impossível pagar.";
+ 			}
  		}
+
  		// Métodos especiais
- 		public function ContaBanco($st, $s){
+ 		public function ContaBanco($st, $sd){
 			setStatus(false);
 			setSaldo(0);
 		}
@@ -61,11 +87,11 @@
  		public function getDono(){
  			return $d;
  		}
- 		public function setSaldo($s){
- 			$this->saldo = $s;
+ 		public function setSaldo($sd){
+ 			$this->saldo = $sd;
  		}
  		public function getSaldo(){
- 			return $s;
+ 			return $sd;
  		}
  		public function setStatus($st){
  			$this->status = $st;
