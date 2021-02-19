@@ -12,35 +12,39 @@
 		private $status;
 		
  		public function abrirConta($t){
- 			setTipo($t);
- 			setStatus(true);
+ 			$this->setTipo($t);
+ 			$this->setStatus(true);
  			if ($t == "CC") {
- 				setSaldo(50);
+ 				$this->setSaldo(50);
  			} elseif ($t == "CP") {
- 				setSaldo(150);
+ 				$this->setSaldo(150);
  			}
  		}
  		public function fecharConta(){
- 			if ($sd > 0) {
- 				echo "Conta com dinheiro, não pode ser fechada.";
- 			} elseif ($sd < 0) {
- 				echo "Conta em débito";
+ 			if ($this->getSaldo() > 0) {
+ 				echo "Conta com dinheiro, não pode ser fechada.".$this->getDono()."</br>";
+ 			} elseif ($this->getSaldo() < 0) {
+ 				echo "Conta em débito, não pode ser fechada.".$this->getdono()."<br/>";
+ 			} else {
+ 				$this->setStatus(false);
+ 				echo "Conta de - ".$this->getDono()."Fechada. <br/>";
  			}
- 			setSatatus(false);
  		}
  		public function depositar($vl){
- 			if ($st = true) {
- 				setSaldo(getSaldo() + $vl);
+ 			if ($this->getStatus() == true) {
+ 				$this->setSaldo($this->getSaldo() + $vl);
+ 				echo "Deposito de R$ $vl na conta de - ".$this->getDono()."<br/>";
  			} else {
  				echo "Impossível fazer depósito";
  			}
  		}
  		public function sacar($vl){
- 			if ($st = true) {
- 				if ($sd > 0) {
- 					setSaldo(getSaldo() - $vl);
+ 			if ($this->getStatus() == true) {
+ 				if ($this->getSaldo() >= $vl) {
+ 					$this->setSaldo($this->getSaldo() - $vl);
+ 					echo "Saque de R$ $vl altorizado. - ".$this->getDono()."<br/>";
  				} else {
- 					echo "Saldo insuficiente.";
+ 					echo "Saldo insuficiente para sacar. - ".$this->getDono()."<br/>";
  				}
  			} else {
  				echo "Impossível sacar.";
@@ -48,14 +52,15 @@
  		}
  		public function pagarMensal(){
  			$v_m = 0;
- 			if ($t == "CC") {
+ 			if ($this->getTipo() == "CC") {
  				$v_m = 12;
- 			} elseif ($t == "CP") {
+ 			} elseif ($this->getTipo() == "CP") {
  				$v_m = 20;
  			}
- 			if ($st = true) {
- 				if ($sd > $v_m) {
- 					setSaldo(getSaldo() - $v_m);
+ 			if ($this->getStatus() == true) {
+ 				if ($this->getSaldo() > $v_m) {
+ 					$this->setSaldo($this->getSaldo() - $v_m);
+ 					echo "Mensalidade debitada R$ $v_m na conta de - ".$this->getDono()."<br/>";
  				} else {
  					"Saldo insuficiente.";
  				}
@@ -65,39 +70,40 @@
  		}
 
  		// Métodos especiais
- 		public function ContaBanco($st, $sd){
-			setStatus(false);
-			setSaldo(0);
+ 		public function ContaBanco(){
+			$this->setStatus(false);
+			$this->setSaldo(0);
+			echo "Conta criada com sussesso! <br/>";
 		}
  		public function setNumConta($nc){
  			$this->numConta = $nc;
  		}
  		public function getNumConta(){
- 			return $nc;
+ 			return $this->numConta;
  		}
  		public function setTipo($t){
  			$this->tipo = $t;
  		}
  		public function getTipo(){
- 			return $t;
+ 			return $this->tipo;
  		} 		
  		public function setDono($d){
  			$this->dono = $d;
  		}
  		public function getDono(){
- 			return $d;
+ 			return $this->dono;
  		}
  		public function setSaldo($sd){
  			$this->saldo = $sd;
  		}
  		public function getSaldo(){
- 			return $sd;
+ 			return $this->saldo;
  		}
  		public function setStatus($st){
  			$this->status = $st;
  		}
  		public function getStatus(){
- 			return $st;
+ 			return $this->status;
  		}
 	}
 
