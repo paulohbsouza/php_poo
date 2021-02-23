@@ -73,9 +73,17 @@
     </pre>
     -->
     <h4>Aula 05</h4>
+    <!--
     <pre>
     <?php
-    	#The-Banks
+    	//echo "#Pasta The-Banks";
+    ?>
+    </pre>
+    -->
+    <h4>Aula 06</h4>
+    <pre>
+    <?php
+        echo "#Pasta Aula-06";
     ?>
     </pre>
 
