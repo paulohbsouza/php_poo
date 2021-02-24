@@ -14,7 +14,11 @@
     <h4>Aula 06</h4>
     <pre>
     <?php
-    	
+    	require_once 'controlador.class.php';
+        $c = new ControleRemoto();
+        $c->ligar();
+        $c->maisVolume();
+        $c->abrirMenu();
     ?>
     </pre>
 
