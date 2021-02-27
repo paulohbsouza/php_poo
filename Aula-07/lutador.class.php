@@ -11,19 +11,28 @@
 		private $categoria, $vitorias, $derrotas, $empates;
 		#métodos
 		function apresetar (){
-
+			echo "<p>---------------------------</p>";
+			echo "<p>Cehgou a hora! Lutador </p>".$this->getNome();
+			echo "veio diretamente de ".$this->getNacionalidade();
+			echo "tem ".$this->getIdade."anos e pesa ".$this->getPeso()." Kilos.";
+			echo "<br/>Ele tem ".$this->getVitorias()."vitórias";
+			echo $this->getDerrotas()." derrotas e ".$this->getEmpates()." empates";
 		}
 		function status (){
-
+			echo "<p>---------------------------</p>";
+			echo "<p>".$this->getNome()." é um peso ".$this->getNacionalidade();
+			echo "e já ganhou ".$this->getVitorias()." vezes,";
+			echo " perdeu ".$this->getDerrotas()." vezes e ";
+			echo " empatou ".$this->getEmpates()." vezes!";
 		}
 		function ganharLuta (){
-
+			$this->setVitorias($this->getVitorias() + 1);
 		}
 		function perderLuta (){
-
+			$this->setDerrotas($this->getDerrotas() + 1);
 		}
 		function empatarLuta (){
-
+			$this->setEmpates($this->getEmpates() + 1);
 		}
 		#métodos especiais
 		function __construct($no, $na, $id, $al, $pe, $vi, $de, $em){
@@ -31,7 +40,8 @@
 			$this->nacionalidade = $na;
 			$this->idade = $id;
 			$this->altura = $al;
-			$this->peso = $pe; categoria
+			$this->peso = $pe; 
+			//categoria
 			$this->vitorias = $vi;
 			$this->derrotas = $de;
 			$this->empates = $em;
@@ -78,9 +88,20 @@
 		}
 		function setPeso ($peso){
 			$this->peso = $peso;
+			$this->setCategoria();
 		}
-		function setCategoria ($categoria){
-			$this->categoria = $categoria;
+		function setCategoria (){
+			if ($this->peso < 52.2) {
+				$this->categoria = "Inválido. Muito leve.";
+			} elseif ($this->peso <= 70.3) {
+				$this->categoria = "Leve";
+			} elseif ($this->peso <= 83.9) {
+				$this->categoria = "Médio";		
+			} elseif ($this->peso <= 120.2) {
+				$this->categoria = "Pesado";
+			} else {
+				$this->categoria = "Inválido";
+			}
 		}
 		function setVitorias ($vitoria){
 			$this->vitorias = $vitorias;
