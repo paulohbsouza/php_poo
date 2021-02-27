@@ -14,7 +14,10 @@
     <h4>Aula 07</h4>
     <pre>
     <?php
-    	
+    	require_once 'lutador.class.php';
+    	$l = new Lutador("Pretty Boy", "França", 30, 1.75, 68.9, 11, 2, 1);
+    	//print_r($l);
+    	$l->status();
     ?>
     </pre>
 
