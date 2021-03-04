@@ -10,18 +10,18 @@
 		private $idade, $altura, $peso;
 		private $categoria, $vitorias, $derrotas, $empates;
 		#métodos
-		function apresetar (){
+		function apresentar (){
 			echo "<p>---------------------------</p>";
 			echo "<p>Cehgou a hora! Lutador </p>".$this->getNome();
-			echo "veio diretamente de ".$this->getNacionalidade();
-			echo "tem ".$this->getIdade."anos e pesa ".$this->getPeso()." Kilos.";
-			echo "<br/>Ele tem ".$this->getVitorias()."vitórias";
-			echo $this->getDerrotas()." derrotas e ".$this->getEmpates()." empates";
+			echo " veio diretamente de ".$this->getNacionalidade();
+			echo ", tem ".$this->getIdade()." anos e pesa ".$this->getPeso()." Kilos.";
+			echo "<br/>Ele tem ".$this->getVitorias()." vitórias ";
+			echo $this->getDerrotas()." derrotas e ".$this->getEmpates()." empates<br/><br/>";
 		}
 		function status (){
 			echo "<p>---------------------------</p>";
-			echo "<p>".$this->getNome()." é um peso ".$this->getNacionalidade();
-			echo "e já ganhou ".$this->getVitorias()." vezes,";
+			echo "<p>".$this->getNome()." é um peso ".$this->getCategoria();
+			echo " e já ganhou ".$this->getVitorias()." vezes,";
 			echo " perdeu ".$this->getDerrotas()." vezes e ";
 			echo " empatou ".$this->getEmpates()." vezes!";
 		}
@@ -40,7 +40,7 @@
 			$this->nacionalidade = $na;
 			$this->idade = $id;
 			$this->altura = $al;
-			$this->peso = $pe; 
+			$this->setPeso($pe); 
 			//categoria
 			$this->vitorias = $vi;
 			$this->derrotas = $de;
@@ -48,31 +48,31 @@
 		}
 		#métodos geters e seters
 		function getNome (){
-			return $this->nome = $nome;
+			return $this->nome;
 		}
 		function getNacionalidade (){
-			return $this->nacionalidade = $nacionalidade;
+			return $this->nacionalidade;
 		}
 		function getIdade (){
-			return $this->idade = $idade;
+			return $this->idade;
 		}
 		function getAltura (){
-			return $this->altura = $altura;
+			return $this->altura;
 		}
 		function getPeso (){
-			return $this->peso = $peso;
+			return $this->peso;
 		}
 		function getCategoria (){
-			return $this->categoria = $categoria;
+			return $this->categoria;
 		}
 		function getVitorias (){
-			return $this->vitorias = $vitorias;
+			return $this->vitorias;
 		}
 		function getDerrotas (){
-			return $this->derrotas = $derrotas;
+			return $this->derrotas;
 		}
 		function getEmpates (){
-			return $this->empates = $empates;
+			return $this->empates;
 		}
 		function setNome ($nome){
 			$this->nome = $nome;
@@ -90,7 +90,7 @@
 			$this->peso = $peso;
 			$this->setCategoria();
 		}
-		function setCategoria (){
+		private function setCategoria (){
 			if ($this->peso < 52.2) {
 				$this->categoria = "Inválido. Muito leve.";
 			} elseif ($this->peso <= 70.3) {
