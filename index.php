@@ -87,14 +87,14 @@
     ?>
     </pre>
 
-    <h4>Aula 07</h4>
+    <h4>Aula 07 e 08</h4>
     <pre>
     <?php
-        echo "#Pasta: /Aula-07";
+        echo "#Pasta: /Aula-07-e-08";
     ?>
     </pre>
 
-    <h4>Aula 08</h4>
+    <h4>Aula 0x</h4>
     <pre>
     <?php
         echo "#Pasta: /Aula-08";
