@@ -81,44 +81,57 @@
     </pre>
     -->
     <h4>Aula 06</h4>
+    <!--
     <pre>
     <?php
-        echo "#Pasta: /Aula-06";
+        /* echo "#Pasta: /Aula-06"; */
     ?>
     </pre>
-
+    -->
     <h4>Aula 07 e 08</h4>
+    <!--
     <pre>
     <?php
-        echo "#Pasta: /Aula-07-e-08";
+        /* echo "#Pasta: /Aula-07-e-08"; */
     ?>
     </pre>
-
+    -->
     <h4>Aula 09</h4>
+    <!--
     <pre>
     <?php
-        echo "#Pasta: /Aula-09";
+        /* echo "#Pasta: /Aula-09"; */
     ?>
     </pre>
-
+    -->
     <h4>Aula 10</h4>
+    <!--
     <pre>
     <?php
-        echo "#Pasta: /Aula-10";
+        /* echo "#Pasta: /Aula-10"; */
     ?>
     </pre>
-
+    -->
     <h4>Aula 11</h4>
+    <!--
     <pre>
     <?php
-        echo "#Pasta: /Aula-11";
+        /* echo "#Pasta: /Aula-11"; */
     ?>
     </pre>
-
+    -->
     <h4>Aula 12</h4>
+    <!--
     <pre>
     <?php
-        echo "#Pasta: /Aula-12";
+        /* echo "#Pasta: /Aula-12"; */
+    ?>
+    </pre>
+    -->
+    <h4>Aula 13</h4>
+    <pre>
+    <?php
+        echo "#Pasta: /Aula-13";
     ?>
     </pre>
 
