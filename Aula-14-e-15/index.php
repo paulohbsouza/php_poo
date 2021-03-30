@@ -14,9 +14,10 @@
     <h4>Aula 14 e 15</h4>
     <pre>
     <?php
-
+        echo "oi";
         require_once 'video.class.php';
         require_once 'gafanhoto.class.php';
+        require_once 'visualizacao.class.php';
 
         $v[0] = new Video ("Aula 1 de POO");
         $v[1] = new Video ("Aula 12 de PHP");
@@ -25,8 +26,13 @@
         $g[0] = new Gafanhoto("Jubileu", 22, "M", "juba");
         $g[1] = new Gafanhoto("Creuza", 12, "F", "creuzita");
 
-        print_r($v);
+        var_dump($v);
         print_r($g);
+
+        $vis[0] = new Visualizacao($g[0], $v[2]);
+        
+        print_r($vis);
+
 
     ?>
     </pre>
