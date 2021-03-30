@@ -12,7 +12,7 @@
 
 		public function __construct($titulo) {
 			$this->titulo = $titulo;
-			$this->avaliacoes = 1;
+			$this->avaliacao = 1;
 			$this->views = 0;
 			$this->curtidas = 0;
 			$this->reproduzindo = false;
@@ -48,9 +48,10 @@
 			$this->titulo = $ti;
 		}
 		public function setAvaliacao($ava) {
-			$this->avaliacao = $ava;
+			$media = ($this->avaliacao + $ava) /$this->views;
+			$this->avaliacao = $media;
 		}
-		public function set($vi) {
+		public function setViews($vi) {
 			$this->views = $vi;
 		}
 		public function setCurtidas($cu) {

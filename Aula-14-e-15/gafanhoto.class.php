@@ -17,6 +17,19 @@
 			$this->totAssistido ++;
 		}
 
+		public function getLogin() {
+			return $this->login;
+		}
+		public function getTotAssistido() {
+			return $this->totAssistido;
+		}
+		public function setLogin($lo) {
+			$this->login = $lo;
+		}
+		public function setTotAssistido($totAs) {
+			$this->totAssistido = $totAs;
+		}
+
 	}
 
 ?>

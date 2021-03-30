@@ -25,12 +25,18 @@
 
         $g[0] = new Gafanhoto("Jubileu", 22, "M", "juba");
         $g[1] = new Gafanhoto("Creuza", 12, "F", "creuzita");
+        $g[2] = new Gafanhoto("Paulo", 18, "M", "paulin");
 
-        var_dump($v);
-        print_r($g);
+        //var_dump($v);
+        //print_r($g);
 
         $vis[0] = new Visualizacao($g[0], $v[2]);
-        
+        $vis[1] = new Visualizacao($g[0], $v[1]);
+        //$vis[2] = new Visualizacao($g[2], $v[1]);
+
+        $vis[0]->avaliar();
+        $vis[1]->avaliarPorc(85);
+
         print_r($vis);
 
       ?>

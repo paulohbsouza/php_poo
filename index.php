@@ -139,7 +139,8 @@
 	<h4>Aula 14 e 15</h4>
     <pre>
     <?php
-        echo "#Pasta: /Aula-14 e 15";
+        echo "#Pasta: /Aula-14 e 15 <br/>";
+        echo "Classe interna do PHP -> MySQLi para banco de dados com POO";
     ?>
     </pre>
 
