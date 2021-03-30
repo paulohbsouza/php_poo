@@ -13,8 +13,8 @@
   <body>
     <h4>Aula 14 e 15</h4>
     <pre>
-    <?php
-        echo "oi";
+      <?php
+        
         require_once 'video.class.php';
         require_once 'gafanhoto.class.php';
         require_once 'visualizacao.class.php';
@@ -33,8 +33,7 @@
         
         print_r($vis);
 
-
-    ?>
+      ?>
     </pre>
 
 
